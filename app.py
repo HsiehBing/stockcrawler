@@ -13,7 +13,7 @@ from linebot.models import *
 from message import *
 from new import *
 from Function import *
-import yfinaince
+from yfinaince import *
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
@@ -70,15 +70,31 @@ def handle_message(event):
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
     elif '#' in msg:
-    #     message = yfinaince.Price('tsla')
-        StockName = msg[1:]
-        Ticker = yf.Ticker(StockName)
+        
+        #def finainces():
+        #    return '123'
+###################
+        #  message = finainces()
+###################
+        message =TextSendMessage(finainces(msg)) 
+        
+        
+        
+        # #message = TextSendMessage(text=f"現在股價, {str( Ticker.info['currentPrice'] )} ")
+        line_bot_api.reply_message(event.reply_token, message)
+###################
+    elif '*' in msg:
+         StockName = msg[1:]
+         Ticker2 = yf.Ticker(StockName)
         # message = TextSendMessage(text=str( yfinance.Price( 'tsla' ) ) )
-        message = TextSendMessage(text=str( Ticker.info['currentPrice'] ) )
-        line_bot_api.reply_message(event.reply_token, message)
+         message = TextSendMessage(text=str( Ticker2.info['previousClose'] ) )
+         line_bot_api.reply_message(event.reply_token, message)
+
+       
     else:
-        message = TextSendMessage(text=msg)
+        message = TextSendMessage(text="輸入錯誤")
         line_bot_api.reply_message(event.reply_token, message)
+    
 
 @handler.add(PostbackEvent)
 def handle_message(event):
@@ -99,5 +115,3 @@ import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-
-    
