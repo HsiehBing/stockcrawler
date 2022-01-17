@@ -18,6 +18,9 @@ import tempfile, os
 import datetime
 import time
 import yfinance as yf
+import matplotlib.pyplot as plt
+import pyimgur
+
 #======python的函數庫==========
 
 app = Flask(__name__)
@@ -57,6 +60,15 @@ def handle_message(event):
          Ticker2 = yf.Ticker(StockName)
          message = TextSendMessage(text=str( Ticker2.info['previousClose'] ) )
          line_bot_api.reply_message(event.reply_token, message)
+    elif 'P' in msg:
+        client.replyMessage(event.replyToken, 
+        {
+        type: 'image',
+        originalContentUrl: 'https://i.imgur.com/cnqrFHa.png',
+        previewImageUrl: 'https://i.imgur.com/cnqrFHa.png'
+        }
+        )
+        
     
 
 @handler.add(PostbackEvent)
