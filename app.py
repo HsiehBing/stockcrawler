@@ -54,6 +54,7 @@ def handle_message(event):
     if '#' in msg:
         message =TextSendMessage(finainces(msg)) 
         line_bot_api.reply_message(event.reply_token, message)
+ 
 
     elif '*' in msg:
          StockName = msg[1:]
