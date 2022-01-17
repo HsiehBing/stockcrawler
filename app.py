@@ -61,9 +61,9 @@ def handle_message(event):
         # message = TextSendMessage(text=str( yfinance.Price( 'tsla' ) ) )
          message = TextSendMessage(text=str( Ticker2.info['previousClose'] ) )
          line_bot_api.reply_message(event.reply_token, message)       
-    # else:
-    #     message = TextSendMessage(text="輸入錯誤")
-    #     line_bot_api.reply_message(event.reply_token, message)
+    else:
+        message = TextSendMessage(text="輸入錯誤")
+        line_bot_api.reply_message(event.reply_token, message)
     
 
 @handler.add(PostbackEvent)
