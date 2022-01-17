@@ -1,4 +1,4 @@
 git init
 git add .
 git commit -am'ok'
-git push heroku main -f
+git push heroku master
