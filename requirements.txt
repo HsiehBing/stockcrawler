@@ -2,5 +2,5 @@ line-bot-sdk
 flask
 yfinance
 datetime
-matplotlib.pyplot
+matplotlib
 pyimgur

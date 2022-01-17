@@ -18,7 +18,7 @@ import tempfile, os
 import datetime
 import time
 import yfinance as yf
-import matplotlib.pyplot as plt
+import matplotlib as plt
 import pyimgur
 
 #======python的函數庫==========
@@ -62,15 +62,14 @@ def handle_message(event):
          message = TextSendMessage(text=str( Ticker2.info['previousClose'] ) )
          line_bot_api.reply_message(event.reply_token, message)
     elif 'P' in msg:
-        client.replyMessage(event.replyToken, 
-        {
-        type: 'image',
-        originalContentUrl: 'https://i.imgur.com/cnqrFHa.png',
-        previewImageUrl: 'https://i.imgur.com/cnqrFHa.png'
-        }
-        )
-        
-    
+        line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url='https://i.imgur.com/cnqrFHa.png', preview_image_url='https://i.imgur.com/cnqrFHa.png'))
+
+    elif '~' in msg:
+        message = TextSendMessage(text="#為查詢股價, P為30日內走勢, *為120日內走勢")
+        line_bot_api.reply_message(event.reply_token, message)
+
+
+
 
 @handler.add(PostbackEvent)
 def handle_message(event):
