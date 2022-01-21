@@ -11,6 +11,8 @@ from linebot.models import *
 
 #======這裡是呼叫的檔案內容=====
 from yfinaince import *
+from imgur import *
+from running_price import *
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
@@ -51,21 +53,19 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    if '#' in msg:
+    if '#' in msg[0]:
         message =TextSendMessage(finainces(msg)) 
         line_bot_api.reply_message(event.reply_token, message)
  
 
-    elif '*' in msg:
-         StockName = msg[1:]
-         Ticker2 = yf.Ticker(StockName)
-         message = TextSendMessage(text=str( Ticker2.info['previousClose'] ) )
-         line_bot_api.reply_message(event.reply_token, message)
-    elif 'P' in msg:
-        line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url='https://i.imgur.com/cnqrFHa.png', preview_image_url='https://i.imgur.com/cnqrFHa.png'))
-
-    elif '~' in msg:
-        message = TextSendMessage(text="#為查詢股價, P為30日內走勢, *為120日內走勢")
+    elif '*' in msg[0]:
+        img_url = glucose_graph(msg)
+        line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))
+    elif 'P' in msg[0]:
+        img_url = today_price(msg)
+        line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))
+    elif '~' in msg[0]:
+        message = TextSendMessage(text="#為查詢股價, P台股當日走勢, *為120日內走勢, *1為30日內走勢")
         line_bot_api.reply_message(event.reply_token, message)
 
 

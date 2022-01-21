@@ -9,6 +9,7 @@ def finainces(msg):
     HMS= (localtime[11:19])
     StockName = msg[1:]
     up_down=[]
+    Change_Rate = 0
     Ticker = yf.Ticker(StockName)
     Tiker2 = Ticker.info['currentPrice']
 
@@ -22,9 +23,13 @@ def finainces(msg):
         up_down = '漲'
     elif Price_Gap00 <0:
         up_down = '跌'
+    Change_Rate00 = (Ticker.info['currentPrice']-Ticker.info['previousClose'])/ Ticker.info['previousClose']*100
+    Change_Rate0 = str(Change_Rate00)
+    if Change_Rate00 >=0:
+        Change_Rate = Change_Rate0[:3]
+    elif Change_Rate00 <0:
+        Change_Rate = Change_Rate0[:4]
     
-    Change_Rate0 = str((Ticker.info['currentPrice']-Ticker.info['previousClose'])/ Ticker.info['previousClose']*100)
-    Change_Rate = Change_Rate0[:3]
     
     final_part=str(f"{HMS} {StockName} 股價:{Previous_Price}, {up_down}{Price_Gap}({Change_Rate}%)")
     
