@@ -13,6 +13,7 @@ from linebot.models import *
 from yfinaince import *
 from imgur import *
 from running_price import *
+from linebot.models import *
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
@@ -22,6 +23,7 @@ import time
 import yfinance as yf
 import matplotlib as plt
 import pyimgur
+import pickle
 
 #======python的函數庫==========
 
@@ -33,7 +35,8 @@ line_bot_api = LineBotApi('T5Zqw8jYWPqLTdpT46lz06Wbqm3RpDw3mrylWdKdV5YRUXqXw/I4B
 handler = WebhookHandler('fb51bfd54e6dca9668655d34b92ebb71')
 
 
-# 監聽所有來自 /callback 的 Post Request
+#監聽所有來自 /callback 的 Post Request
+#########
 @app.route("/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
@@ -47,9 +50,13 @@ def callback():
     except InvalidSignatureError:
         abort(400)
     return 'OK'
+#########
 
 
-# 處理訊息
+
+
+#########
+#處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
@@ -64,9 +71,11 @@ def handle_message(event):
     elif 'P' in msg[0]:
         img_url = today_price(msg)
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))
+        
     elif '~' in msg[0]:
-        message = TextSendMessage(text="#為查詢股價, P台股當日走勢, *為120日內走勢, *1為30日內走勢")
-        line_bot_api.reply_message(event.reply_token, message)
+        message = TextSendMessage(text="#為查詢股價, P台股當日走勢, *為120日內走勢, **為30日內走勢")
+        line_bot_api.reply_message(event.reply_token, message)#
+
 
 
 
