@@ -5,7 +5,8 @@ import pickle
 
 
 def finainces(msg):
-    if msg[1]  not in ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']:
+    if msg[1].isalpha()==False :
+#    if msg[1]  not in ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']:
         a_file = open("Input.pkl", 'rb')
         Input = pickle.load(a_file)
         a_file.close()
@@ -50,7 +51,8 @@ def finainces(msg):
     #時間
         localtime= str((datetime.datetime.now()) + datetime.timedelta(hours = 8))
         HMS= (localtime[11:19]) 
-        StockName = msg[1:]
+        StockName = msg[1:].lower()
+        StockNameE = msg[1:].upper()
         up_down=[]
         Change_Rate = 0
         Ticker = yf.Ticker(StockName)
@@ -74,7 +76,7 @@ def finainces(msg):
             Change_Rate = Change_Rate0[:4]
         
         
-        final_part=str(f"{HMS} {StockName} 股價:{Current_Price0}, {up_down}{Price_Gap}({Change_Rate}%)")
+        final_part=str(f"{HMS} {StockNameE} 股價:{Current_Price0}, {up_down}{Price_Gap}({Change_Rate}%)")
         
         return final_part
     

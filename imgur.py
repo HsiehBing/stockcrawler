@@ -6,8 +6,8 @@ import matplotlib.dates as md
 import pickle
 
 def glucose_graph(msg):
-
-    if msg[2] not in ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']:
+    if msg[2].isalpha()==False :
+#    if msg[2] not in ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']:
         a_file = open("Input.pkl", 'rb')
         Input = pickle.load(a_file)
         a_file.close()
@@ -65,19 +65,24 @@ def glucose_graph(msg):
 
 
 ###################################################################################
+#This part is for America stock
     else:  
         """
         plt.figure(figsize=(240,240))
         plt.plot(ug)
         plt.savefig('send.png')
         """
+        
         time = datetime.datetime.now()
+        ##change the word to lower
         if msg[1]=='*':
-            StockName = msg[2:]
+            StockName = msg[2:].lower()
+            StockNameE = msg[2:].upper()
             delate = 30
         
         else:
-            StockName = msg[1:]
+            StockName = msg[1:].lower()
+            StockNameE = msg[1:].upper()
             delate = 120
     
         time000 = datetime.timedelta(days= -delate)
@@ -94,7 +99,7 @@ def glucose_graph(msg):
         plt.grid(True)
         locator = md.MonthLocator()
         plt.gca().xaxis.set_major_locator(locator)
-        plt.title(f'{StockName} {delate}days History Price', size= 25)
+        plt.title(f'{StockNameE} {delate}days History Price', size= 25)
         plt.yticks(fontsize = 18)
         plt.xticks(fontsize = 18)
         plt.plot()

@@ -73,7 +73,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))
         
     elif '~' in msg[0]:
-        message = TextSendMessage(text="#為查詢股價, P台股當日走勢, *為120日內走勢, **為30日內走勢")
+        message = TextSendMessage(text="#為查詢股價, P台股當日走勢, *為120日內走勢, **為30日內走勢, 目前台股可以輸入代號或名稱，美股大小寫都可以")
         line_bot_api.reply_message(event.reply_token, message)#
 
 
