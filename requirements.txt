@@ -4,3 +4,6 @@ yfinance
 datetime
 matplotlib
 pyimgur
+bs4
+pandas
+mplfinance
