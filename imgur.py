@@ -1,3 +1,4 @@
+# *跟**
 import matplotlib.pyplot as plt
 import pyimgur
 import yfinance as yf
@@ -6,7 +7,7 @@ import matplotlib.dates as md
 import pickle
 
 def glucose_graph(msg):
-    if msg[2].isalpha()==False :
+    if msg[2].encode('UTF-8').isalpha()==False :
 #    if msg[2] not in ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']:
         a_file = open("Input.pkl", 'rb')
         Input = pickle.load(a_file)
@@ -27,9 +28,11 @@ def glucose_graph(msg):
         plt.plot(ug)
         plt.savefig('send.png')
         """
+        plt.rcParams['font.sans-serif'] = ['SimHei']
         a_file = open("Output.pkl", 'rb')
         Output = pickle.load(a_file)
         a_file.close()
+        stockNameE =Output[StockName]
     
 
     
@@ -47,7 +50,7 @@ def glucose_graph(msg):
         plt.grid(True)
         locator = md.MonthLocator()
         plt.gca().xaxis.set_major_locator(locator)
-        plt.title(f'{StockName} {delate}days History Price', size= 25)
+        plt.title(f'{stockNameE} {delate}days History Price', size= 25)
         plt.yticks(fontsize = 18)
         plt.xticks(fontsize = 18)
         plt.plot()
