@@ -19,6 +19,8 @@ from virtual_currency import *
 from After_hour import *
 from test import *
 from candle import *
+from currency import *
+from update import *
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
@@ -74,6 +76,9 @@ def handle_message(event):
     elif 'V' in msg[0]:
         message =TextSendMessage(Vitual_Currency(msg)) 
         line_bot_api.reply_message(event.reply_token, message)
+    elif 'C' in msg[0]:
+        img_url = Currency(msg)
+        line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))    
 
     elif '*' in msg[0]:
         img_url = glucose_graph(msg)
@@ -84,15 +89,21 @@ def handle_message(event):
     elif 'K' in msg[0]:
         img_url = Draw_candle(msg)
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))              
-    elif 'P' in msg[0]:
+    elif 'P' in msg[0] or 'p' in msg[0]:
         img_url = today_price(msg)
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))
     elif 'E' in msg[0]:
         img_url = enddistr(msg)
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))
+    elif 'T'in msg:
+        message =TextSendMessage(finainces_t(msg)) 
+        line_bot_api.reply_message(event.reply_token, message)
+    elif 'UpDate'in msg:
+        message =TextSendMessage(renew_data()) 
+        line_bot_api.reply_message(event.reply_token, message)
         
     elif '~' in msg[0]:
-        message = TextSendMessage(text="#為查詢股價(還有TSE,OTC,小台1,小台2)\nP台股當日走勢, F台股個當日買賣超,\nE盤後法人 K-K線\nV虛擬貨幣價格,\n*為120日內走勢,**為30日內走勢,\n目前台股可以輸入代號或名稱，美股大小寫都可以\n ETSE EFB EFS EDB EDS")
+        message = TextSendMessage(text="測試#為查詢股價(還有TSE,OTC,小台1,小台2)\nP台股當日走勢,\n C當前匯率 F台股個當日買賣超,\nE盤後法人 K-K線\nV虛擬貨幣價格,\n*為120日內走勢,**為30日內走勢,\n目前台股可以輸入代號或名稱，美股大小寫都可以\n ETSE EFB EFS EDB EDS\n UpDate")
         line_bot_api.reply_message(event.reply_token, message)#
 
 

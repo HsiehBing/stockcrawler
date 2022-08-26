@@ -50,7 +50,7 @@ def glucose_graph(msg):
         plt.grid(True)
         locator = md.MonthLocator()
         plt.gca().xaxis.set_major_locator(locator)
-        plt.title(f'{stockNameE} {delate}days History Price', size= 25)
+        plt.title(f'{stockNameE} {delate}days History Price', size= 25,fontproperties="SimHei")
         plt.yticks(fontsize = 18)
         plt.xticks(fontsize = 18)
         plt.plot()

@@ -10,14 +10,14 @@ def Vitual_Currency(msg):
     soup = BeautifulSoup(res.text, "html.parser")
     script = soup.find("div").text
     #price
-    currentPrice = soup.find("span",class_="jsx-143270965").text
+    currentPrice = soup.find(class_="jsx-1959272164 last-price").text
     flt_currentPrice0 = currentPrice.replace(',','')
     flt_currentPrice = float(flt_currentPrice0)
 
     #name
     name = soup.find("section").text
-    script0 = soup.find("section", class_="jsx-143270965 current-quote")
-    script00 = script0.find("div", class_="jsx-143270965 price-change" )
+    script0 = soup.find("section", class_="jsx-1959272164 current-quote")
+    script00 = script0.find("div", class_="jsx-1959272164 price-change" )
     different = script00.find("span").text
     flt_different0 = different.replace(',','')
     flt_different  = float(flt_different0)
@@ -30,7 +30,7 @@ def Vitual_Currency(msg):
     localtime= str((datetime.datetime.now()) + datetime.timedelta(hours = 8))
     HMS= (localtime[11:19])
 
-    final_part=str(f"{HMS} {name} 價格:{currentPrice}, {up_down}{different}({schange_rate}%)")
+    final_part=str(f"{HMS} {name} \n價格:{currentPrice}, \n{up_down}{different}({schange_rate}%)")
     return final_part
 
 

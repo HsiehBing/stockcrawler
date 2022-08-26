@@ -18,12 +18,12 @@ def today_price(msg):
     get_color=[]
     msg = msg[1:]
 ##輸入的訊息轉成代號
-    a_file = open("r_Input.pkl", 'rb')
+    a_file = open("Input.pkl", 'rb')
     Input = pickle.load(a_file)
     a_file.close()       
     stockName = Input[msg]
 #######編碼問題尚待解決    
-    a_file2 = open("r_Output.pkl", 'rb')
+    a_file2 = open("Output.pkl", 'rb')
     Output = pickle.load(a_file2)
     a_file.close()
 #輸出股價名稱
@@ -33,7 +33,7 @@ def today_price(msg):
     #plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei']
 ########################
 #爬當日股價
-    res = requests.get(f'https://tw.stock.yahoo.com/_td-stock/api/resource/FinanceChartService.ApacLibraCharts;autoRefresh=1642576273209;symbols=[{stockName}];type=tick?bkt=&device=desktop&ecma=modern&feature=ecmaModern,useVersionSwitch,useNewQuoteTabColor&intl=tw&lang=zh-Hant-TW&partner=none&prid=anhj1hpgufeaf&region=TW&site=finance&tz=Asia/Taipei&ver=1.2.1214&returnMeta=true')
+    res = requests.get(f'https://tw.stock.yahoo.com/_td-stock/api/resource/FinanceChartService.ApacLibraCharts;autoRefresh=1642576273209;symbols=["{stockName}"];type=tick?bkt=&device=desktop&ecma=modern&feature=ecmaModern,useVersionSwitch,useNewQuoteTabColor&intl=tw&lang=zh-Hant-TW&partner=none&prid=anhj1hpgufeaf&region=TW&site=finance&tz=Asia/Taipei&ver=1.2.1214&returnMeta=true')
     jd = res.json()['data']
     meta =(jd[0]['chart']['meta'])
     PreviousClose =(jd[0]['chart']['meta']['previousClose'])

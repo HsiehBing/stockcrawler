@@ -96,7 +96,7 @@ def finainces(msg):
         
     #######    
     if msg[1].encode('UTF-8').isalpha()==False :
-        a_file = open("r_Input.pkl", 'rb')
+        a_file = open("Input.pkl", 'rb')
         Input = pickle.load(a_file)
         a_file.close()
         msg = Input[msg[1:]]
@@ -106,7 +106,7 @@ def finainces(msg):
         up_down=[]
 
         Change_Rate = 0
-        res = requests.get(f'https://tw.stock.yahoo.com/_td-stock/api/resource/FinanceChartService.ApacLibraCharts;autoRefresh=1642576273209;symbols=[{stockName}];type=tick?bkt=&device=desktop&ecma=modern&feature=ecmaModern,useVersionSwitch,useNewQuoteTabColor&intl=tw&lang=zh-Hant-TW&partner=none&prid=anhj1hpgufeaf&region=TW&site=finance&tz=Asia/Taipei&ver=1.2.1214&returnMeta=true')
+        res = requests.get(f'https://tw.stock.yahoo.com/_td-stock/api/resource/FinanceChartService.ApacLibraCharts;autoRefresh=1642576273209;symbols=["{stockName}"];type=tick?bkt=&device=desktop&ecma=modern&feature=ecmaModern,useVersionSwitch,useNewQuoteTabColor&intl=tw&lang=zh-Hant-TW&partner=none&prid=anhj1hpgufeaf&region=TW&site=finance&tz=Asia/Taipei&ver=1.2.1214&returnMeta=true')
         jd = res.json()['data']
         meta =(jd[0]['chart']['meta'])
         Previous_Price =round((meta['previousClose']),2)
@@ -120,7 +120,7 @@ def finainces(msg):
         elif Price_Gap <0:
             up_down = '跌'
         Change_Rate = round((Price_Gap/Previous_Price*100),2)
-        a_file = open("r_Output.pkl", 'rb')
+        a_file = open("Output.pkl", 'rb')
         Output = pickle.load(a_file)
         a_file.close()
         StockNameE = Output[stockName]
