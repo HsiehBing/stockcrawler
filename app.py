@@ -58,11 +58,13 @@ def callback():
     try:
         handler.handle(body, signature)
     except InvalidSignatureError:
-        abort(400)
+        abort(400, "Invalid signature. Please check your channel access token/channel secret.")
     return 'OK'
 #########
 
-
+@app.route("/")
+def hello():
+    return "Hello Flask!"
 
 
 #########
@@ -125,7 +127,7 @@ def welcome(event):
     line_bot_api.reply_message(event.reply_token, message)
         
         
-import os
-if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+#import os
+#if __name__ == "__main__":
+#    port = int(os.environ.get('PORT', 5000))
+#    app.run(host='0.0.0.0', port=port)

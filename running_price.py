@@ -2,6 +2,7 @@
 #代號P
 import requests
 import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontProperties
 import pandas as pd
 import pyimgur
 import matplotlib.dates as md
@@ -14,6 +15,7 @@ from datetime import timedelta
 ####msg = 'P2330'
 
 def today_price(msg):
+    font = FontProperties(fname=".fonts/SimHei.ttf")
     up_down=[]
     get_color=[]
     msg = msg[1:]
@@ -97,8 +99,8 @@ def today_price(msg):
             y_min_value = y_max_value + PreviousClose*0.02
 
 
-        ax.annotate(max_element, xy = (x_max_value,y_max_value), color = 'red', size=18, fontproperties = 'SimHei')
-        ax.annotate(min_element, xy = (x_min_value,y_min_value), color = 'blue', size=18, fontproperties = 'SimHei')
+        ax.annotate(max_element, xy = (x_max_value,y_max_value), color = 'red', size=18, fontproperties = font)
+        ax.annotate(min_element, xy = (x_min_value,y_min_value), color = 'blue', size=18, fontproperties = font)
     else:
         ax.annotate(min_element, xy = (x_min_value,y_min_value), color = 'black', size=18)
     ###
@@ -114,8 +116,8 @@ def today_price(msg):
     ########################
     #SimHei
     #Microsoft JhengHei
-    plt.figtext(0.1, 0.94, titleA, fontsize=18,fontproperties = 'SimHei', color='black', ha ='left', )
-    plt.figtext(0.1, 0.88, titleB, fontsize=18,fontproperties = 'SimHei', color=get_color, ha ='left', )
+    plt.figtext(0.1, 0.94, titleA, fontsize=18,fontproperties = font, color='black', ha ='left', )
+    plt.figtext(0.1, 0.88, titleB, fontsize=18,fontproperties = font, color=get_color, ha ='left', )
     ########################
     ax.grid(bool)
     ax.set_xlabel('')
