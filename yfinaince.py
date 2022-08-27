@@ -150,11 +150,8 @@ def finainces(msg):
         elif Price_Gap00 <0:
             up_down = '跌'
         Change_Rate00 = (Ticker.info['regularMarketPrice']-Ticker.info['previousClose'])/ Ticker.info['previousClose']*100
-        Change_Rate0 = str(Change_Rate00)
-        if Change_Rate00 >=0:
-            Change_Rate = Change_Rate0[:3]
-        elif Change_Rate00 <0:
-            Change_Rate = Change_Rate0[:4]
+        Change_Rate = round(float(Change_Rate00),2)
+
         
         
         final_part=str(f"{HMS} {StockNameE} 股價:{Current_Price0}, {up_down}{Price_Gap}({Change_Rate}%)")
