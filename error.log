@@ -2821,3 +2821,490 @@ Matplotlib created a temporary config/cache directory at /tmp/matplotlib-ofhu7dn
 [2022-08-27 08:08:04 +0000] [515] [DEBUG] POST /callback
 [2022-08-27 08:08:08 +0000] [515] [DEBUG] Ignoring EPIPE
 [2022-08-27 08:15:25 +0000] [515] [DEBUG] POST /callback
+[2022-08-27 08:18:22 +0000] [519] [DEBUG] GET /
+[2022-08-27 08:18:22 +0000] [524] [DEBUG] GET /favicon.ico
+[2022-08-27 08:24:38 +0000] [519] [DEBUG] POST /callback
+[2022-08-27 08:27:52 +0000] [515] [DEBUG] POST /callback
+[2022-08-27 08:33:02 +0000] [519] [DEBUG] POST /callback
+[*********************100%***********************]  1 of 1 completed[2022-08-27 08:33:10 +0000] [519] [DEBUG] Ignoring EPIPE
+[2022-08-27 08:34:11 +0000] [519] [DEBUG] POST /callback
+
+[*********************100%***********************]  1 of 1 completed[2022-08-27 08:34:14 +0000] [524] [DEBUG] POST /callback
+[*********************100%***********************]  1 of 1 completed[2022-08-27 08:34:16 +0000] [519] [DEBUG] Ignoring EPIPE
+[2022-08-27 08:34:20 +0000] [524] [DEBUG] Ignoring EPIPE
+[2022-08-27 08:34:28 +0000] [515] [DEBUG] POST /callback
+[*********************100%***********************]  1 of 1 completed[2022-08-27 08:34:31 +0000] [524] [DEBUG] POST /callback
+
+[*********************100%***********************]  1 of 1 completed[2022-08-27 08:34:34 +0000] [519] [DEBUG] POST /callback
+[2022-08-27 08:34:35 +0000] [515] [DEBUG] Ignoring EPIPE
+[2022-08-27 08:34:37 +0000] [524] [DEBUG] Ignoring EPIPE
+[2022-08-27 08:34:39 +0000] [515] [DEBUG] POST /callback
+[2022-08-27 08:34:39 +0000] [519] [DEBUG] Ignoring EPIPE
+[2022-08-27 08:34:53 +0000] [524] [DEBUG] POST /callback
+[2022-08-27 08:34:55 +0000] [519] [DEBUG] GET /remote/fgt_lang
+[2022-08-27 08:34:57 +0000] [524] [DEBUG] Ignoring EPIPE
+[2022-08-27 08:56:01 +0000] [524] [DEBUG] GET /
+[2022-08-27 09:38:32 +0000] [524] [DEBUG] GET /
+[2022-08-27 10:05:14 +0000] [515] [DEBUG] POST /callback
+[2022-08-27 10:05:17 +0000] [515] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:05:32 +0000] [515] [DEBUG] POST /callback
+[2022-08-27 10:05:34 +0000] [519] [DEBUG] POST /callback
+[2022-08-27 10:05:34 +0000] [515] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:05:36 +0000] [515] [DEBUG] POST /callback
+[2022-08-27 10:05:36 +0000] [519] [DEBUG] Ignoring EPIPE
+
+[*********************100%***********************]  1 of 1 completed[2022-08-27 10:05:39 +0000] [519] [DEBUG] POST /callback
+[2022-08-27 10:05:39 +0000] [515] [DEBUG] Ignoring EPIPE
+
+[*********************100%***********************]  1 of 1 completed[2022-08-27 10:05:41 +0000] [519] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:05:42 +0000] [524] [DEBUG] POST /callback
+
+[*********************100%***********************]  1 of 1 completed[2022-08-27 10:05:44 +0000] [524] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:05:45 +0000] [515] [DEBUG] POST /callback
+[2022-08-27 10:05:47 +0000] [515] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:05:47 +0000] [524] [DEBUG] POST /callback
+[2022-08-27 10:05:53 +0000] [515] [DEBUG] POST /callback
+[2022-08-27 10:07:00 +0000] [515] [DEBUG] GET /
+[2022-08-27 10:07:09 +0000] [515] [INFO] Worker exiting (pid: 515)
+
+[2022-08-27 10:07:09 +0000] [430] [INFO] Handling signal: term
+[2022-08-27 10:07:09 +0000] [519] [INFO] Worker exiting (pid: 519)
+
+[2022-08-27 10:07:09 +0000] [524] [INFO] Worker exiting (pid: 524)
+
+[2022-08-27 10:07:09 +0000] [430] [WARNING] Worker with pid 519 was terminated due to signal 15
+[2022-08-27 10:07:09 +0000] [430] [WARNING] Worker with pid 524 was terminated due to signal 15
+[2022-08-27 10:07:09 +0000] [430] [WARNING] Worker with pid 515 was terminated due to signal 15
+[2022-08-27 10:07:09 +0000] [430] [INFO] Shutting down: Master
+[2022-08-27 10:09:36 +0000] [398] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/home/shengbot2881234/stockcrawler/app.sock']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/shengbot2881234/stockcrawler
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 33
+  group: 33
+  umask: 7
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/shengbot2881234/stockcrawler/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/shengbot2881234/stockcrawler/error.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7eff4f2ea0d0>
+  on_reload: <function OnReload.on_reload at 0x7eff4f2ea1f0>
+  when_ready: <function WhenReady.when_ready at 0x7eff4f2ea310>
+  pre_fork: <function Prefork.pre_fork at 0x7eff4f2ea430>
+  post_fork: <function Postfork.post_fork at 0x7eff4f2ea550>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7eff4f2ea670>
+  worker_int: <function WorkerInt.worker_int at 0x7eff4f2ea790>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7eff4f2ea8b0>
+  pre_exec: <function PreExec.pre_exec at 0x7eff4f2ea9d0>
+  pre_request: <function PreRequest.pre_request at 0x7eff4f2eaaf0>
+  post_request: <function PostRequest.post_request at 0x7eff4f2eab80>
+  child_exit: <function ChildExit.child_exit at 0x7eff4f2eaca0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7eff4f2eadc0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7eff4f2eaee0>
+  on_exit: <function OnExit.on_exit at 0x7eff4f2f8040>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2022-08-27 10:09:36 +0000] [398] [INFO] Starting gunicorn 20.1.0
+[2022-08-27 10:09:36 +0000] [398] [DEBUG] Arbiter booted
+[2022-08-27 10:09:36 +0000] [398] [INFO] Listening at: unix:/home/shengbot2881234/stockcrawler/app.sock (398)
+[2022-08-27 10:09:36 +0000] [398] [INFO] Using worker: sync
+[2022-08-27 10:09:36 +0000] [593] [INFO] Booting worker with pid: 593
+[2022-08-27 10:09:36 +0000] [594] [INFO] Booting worker with pid: 594
+[2022-08-27 10:09:36 +0000] [595] [INFO] Booting worker with pid: 595
+[2022-08-27 10:09:36 +0000] [398] [DEBUG] 3 workers
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-ba6m46rv because the default path (/var/www/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-mtfjms82 because the default path (/var/www/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-wnpnbo47 because the default path (/var/www/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+[2022-08-27 10:11:09 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 10:11:20 +0000] [595] [DEBUG] POST /callback
+[*********************100%***********************]  1 of 1 completed[2022-08-27 10:11:23 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 10:11:23 +0000] [595] [DEBUG] Ignoring EPIPE
+[*********************100%***********************]  1 of 1 completed[2022-08-27 10:11:26 +0000] [593] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:11:26 +0000] [594] [DEBUG] POST /callback
+[*********************100%***********************]  1 of 1 completed[2022-08-27 10:11:29 +0000] [594] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:11:34 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 10:11:36 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 10:11:36 +0000] [595] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:11:38 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 10:11:38 +0000] [594] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:11:40 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 10:11:40 +0000] [593] [DEBUG] Ignoring EPIPE
+
+[*********************100%***********************]  1 of 1 completed[2022-08-27 10:11:42 +0000] [593] [DEBUG] POST /callback
+
+[*********************100%***********************]  1 of 1 completed[2022-08-27 10:11:43 +0000] [594] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:11:45 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 10:11:45 +0000] [593] [DEBUG] Ignoring EPIPE
+
+[*********************100%***********************]  1 of 1 completed[2022-08-27 10:11:47 +0000] [594] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:18:56 +0000] [593] [DEBUG] GET /
+[2022-08-27 10:19:03 +0000] [593] [DEBUG] GET /webfig/
+[2022-08-27 10:24:58 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 10:25:07 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 10:25:16 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 10:25:29 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 10:25:47 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 10:25:52 +0000] [595] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:25:59 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 10:26:01 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 10:26:04 +0000] [594] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:26:04 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 10:26:06 +0000] [593] [DEBUG] Ignoring EPIPE
+[2022-08-27 10:26:09 +0000] [595] [DEBUG] Ignoring EPIPE
+[2022-08-27 12:01:19 +0000] [594] [DEBUG] GET /
+[2022-08-27 12:11:18 +0000] [595] [DEBUG] GET /favicon.ico
+[2022-08-27 12:25:07 +0000] [595] [DEBUG] GET /remote/fgt_lang
+[2022-08-27 12:46:42 +0000] [595] [DEBUG] GET /.env
+[2022-08-27 12:46:43 +0000] [595] [DEBUG] POST /
+[2022-08-27 12:46:45 +0000] [594] [DEBUG] GET /_profiler/phpinfo
+[2022-08-27 12:46:45 +0000] [594] [DEBUG] GET /debug/default/view
+[2022-08-27 12:48:17 +0000] [595] [DEBUG] GET /
+[2022-08-27 13:31:49 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 13:32:01 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 13:32:06 +0000] [593] [DEBUG] Ignoring EPIPE
+[2022-08-27 13:33:30 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 13:33:35,347] ERROR in app: Exception on /callback [POST]
+Traceback (most recent call last):
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/shengbot2881234/stockcrawler/app.py", line 59, in callback
+    handler.handle(body, signature)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/linebot/webhook.py", line 259, in handle
+    self.__invoke_func(func, event, payload)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/linebot/webhook.py", line 271, in __invoke_func
+    func(event)
+  File "/home/shengbot2881234/stockcrawler/app.py", line 76, in handle_message
+    message =TextSendMessage(finainces(msg))
+  File "/home/shengbot2881234/stockcrawler/yfinaince.py", line 140, in finainces
+    Tiker2 = Ticker.info['currentPrice']
+KeyError: 'currentPrice'
+[2022-08-27 13:33:35 +0000] [595] [DEBUG] Ignoring EPIPE
+[2022-08-27 13:36:50 +0000] [593] [DEBUG] GET /
+[2022-08-27 13:36:57 +0000] [595] [DEBUG] GET /showLogin.cc
+[2022-08-27 13:37:38 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 13:38:01 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 13:38:06 +0000] [593] [DEBUG] Ignoring EPIPE
+[2022-08-27 13:38:31 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 13:50:34 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 13:50:47 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 13:50:54,210] ERROR in app: Exception on /callback [POST]
+Traceback (most recent call last):
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/shengbot2881234/stockcrawler/app.py", line 59, in callback
+    handler.handle(body, signature)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/linebot/webhook.py", line 259, in handle
+    self.__invoke_func(func, event, payload)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/linebot/webhook.py", line 271, in __invoke_func
+    func(event)
+  File "/home/shengbot2881234/stockcrawler/app.py", line 76, in handle_message
+    message =TextSendMessage(finainces(msg))
+  File "/home/shengbot2881234/stockcrawler/yfinaince.py", line 140, in finainces
+    Tiker2 = Ticker.info['currentPrice']
+KeyError: 'currentPrice'
+[2022-08-27 13:50:54 +0000] [594] [DEBUG] Ignoring EPIPE
+[2022-08-27 13:50:55 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 13:50:59 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 13:51:01,507] ERROR in app: Exception on /callback [POST]
+Traceback (most recent call last):
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/shengbot2881234/stockcrawler/app.py", line 59, in callback
+    handler.handle(body, signature)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/linebot/webhook.py", line 259, in handle
+    self.__invoke_func(func, event, payload)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/linebot/webhook.py", line 271, in __invoke_func
+    func(event)
+  File "/home/shengbot2881234/stockcrawler/app.py", line 76, in handle_message
+    message =TextSendMessage(finainces(msg))
+  File "/home/shengbot2881234/stockcrawler/yfinaince.py", line 140, in finainces
+    Tiker2 = Ticker.info['currentPrice']
+KeyError: 'currentPrice'
+[2022-08-27 13:51:01 +0000] [593] [DEBUG] Ignoring EPIPE
+[2022-08-27 13:51:07 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 13:56:06 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 13:56:13 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 13:56:15 +0000] [595] [DEBUG] Ignoring EPIPE
+[2022-08-27 13:58:40 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 13:58:47,391] ERROR in app: Exception on /callback [POST]
+Traceback (most recent call last):
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/shengbot2881234/stockcrawler/app.py", line 59, in callback
+    handler.handle(body, signature)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/linebot/webhook.py", line 259, in handle
+    self.__invoke_func(func, event, payload)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/linebot/webhook.py", line 271, in __invoke_func
+    func(event)
+  File "/home/shengbot2881234/stockcrawler/app.py", line 76, in handle_message
+    message =TextSendMessage(finainces(msg))
+  File "/home/shengbot2881234/stockcrawler/yfinaince.py", line 140, in finainces
+    Tiker2 = Ticker.info['currentPrice']
+KeyError: 'currentPrice'
+[2022-08-27 13:58:47 +0000] [595] [DEBUG] Ignoring EPIPE
+[2022-08-27 13:58:50 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 13:59:03 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 13:59:17 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 13:59:23 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 13:59:50 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 14:00:01 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 14:03:22 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 14:03:33 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 14:03:38,700] ERROR in app: Exception on /callback [POST]
+Traceback (most recent call last):
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/shengbot2881234/stockcrawler/app.py", line 59, in callback
+    handler.handle(body, signature)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/linebot/webhook.py", line 259, in handle
+    self.__invoke_func(func, event, payload)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/linebot/webhook.py", line 271, in __invoke_func
+    func(event)
+  File "/home/shengbot2881234/stockcrawler/app.py", line 76, in handle_message
+    message =TextSendMessage(finainces(msg))
+  File "/home/shengbot2881234/stockcrawler/yfinaince.py", line 140, in finainces
+    Tiker2 = Ticker.info['currentPrice']
+KeyError: 'currentPrice'
+[2022-08-27 14:03:38 +0000] [595] [DEBUG] Ignoring EPIPE
+[2022-08-27 14:03:46 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 14:05:30 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 14:05:36 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 14:05:43 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 14:06:02 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 14:06:17 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 14:06:17,917] ERROR in app: Exception on /callback [POST]
+Traceback (most recent call last):
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/shengbot2881234/stockcrawler/app.py", line 59, in callback
+    handler.handle(body, signature)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/linebot/webhook.py", line 259, in handle
+    self.__invoke_func(func, event, payload)
+  File "/home/shengbot2881234/linebotvenv/lib/python3.9/site-packages/linebot/webhook.py", line 271, in __invoke_func
+    func(event)
+  File "/home/shengbot2881234/stockcrawler/app.py", line 101, in handle_message
+    message =TextSendMessage(finainces_t(msg))
+  File "/home/shengbot2881234/stockcrawler/test.py", line 41, in finainces_t
+    df_LN= pd.DataFrame(df_all, columns=["ID", "Name"] )
+NameError: name 'pd' is not defined
+[2022-08-27 14:20:58 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 14:21:27 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 14:21:36 +0000] [593] [DEBUG] POST /callback
+[2022-08-27 14:28:40 +0000] [595] [DEBUG] POST /callback
+[2022-08-27 14:30:11 +0000] [594] [DEBUG] POST /callback
+[2022-08-27 14:50:58 +0000] [595] [DEBUG] GET /
+[2022-08-27 14:51:41 +0000] [595] [DEBUG] GET /
+[2022-08-27 15:19:04 +0000] [594] [INFO] Worker exiting (pid: 594)
+
+[2022-08-27 15:19:04 +0000] [595] [INFO] Worker exiting (pid: 595)
+
+[2022-08-27 15:19:04 +0000] [593] [INFO] Worker exiting (pid: 593)
+
+[2022-08-27 15:19:04 +0000] [398] [INFO] Handling signal: term
+[2022-08-27 15:19:04 +0000] [398] [WARNING] Worker with pid 594 was terminated due to signal 15
+[2022-08-27 15:19:04 +0000] [398] [WARNING] Worker with pid 595 was terminated due to signal 15
+[2022-08-27 15:19:04 +0000] [398] [WARNING] Worker with pid 593 was terminated due to signal 15
+[2022-08-27 15:19:04 +0000] [398] [INFO] Shutting down: Master
+[2022-08-27 15:19:05 +0000] [3195] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/home/shengbot2881234/stockcrawler/app.sock']
+  backlog: 2048
+  workers: 3
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/shengbot2881234/stockcrawler
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 33
+  group: 33
+  umask: 7
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/shengbot2881234/stockcrawler/access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/shengbot2881234/stockcrawler/error.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: wsgi:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f64863b90d0>
+  on_reload: <function OnReload.on_reload at 0x7f64863b91f0>
+  when_ready: <function WhenReady.when_ready at 0x7f64863b9310>
+  pre_fork: <function Prefork.pre_fork at 0x7f64863b9430>
+  post_fork: <function Postfork.post_fork at 0x7f64863b9550>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f64863b9670>
+  worker_int: <function WorkerInt.worker_int at 0x7f64863b9790>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f64863b98b0>
+  pre_exec: <function PreExec.pre_exec at 0x7f64863b99d0>
+  pre_request: <function PreRequest.pre_request at 0x7f64863b9af0>
+  post_request: <function PostRequest.post_request at 0x7f64863b9b80>
+  child_exit: <function ChildExit.child_exit at 0x7f64863b9ca0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f64863b9dc0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f64863b9ee0>
+  on_exit: <function OnExit.on_exit at 0x7f64863c7040>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2022-08-27 15:19:05 +0000] [3195] [INFO] Starting gunicorn 20.1.0
+[2022-08-27 15:19:05 +0000] [3195] [DEBUG] Arbiter booted
+[2022-08-27 15:19:05 +0000] [3195] [INFO] Listening at: unix:/home/shengbot2881234/stockcrawler/app.sock (3195)
+[2022-08-27 15:19:05 +0000] [3195] [INFO] Using worker: sync
+[2022-08-27 15:19:05 +0000] [3196] [INFO] Booting worker with pid: 3196
+[2022-08-27 15:19:05 +0000] [3197] [INFO] Booting worker with pid: 3197
+[2022-08-27 15:19:05 +0000] [3198] [INFO] Booting worker with pid: 3198
+[2022-08-27 15:19:05 +0000] [3195] [DEBUG] 3 workers
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-t6ie4xmq because the default path (/var/www/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-l1c71fg9 because the default path (/var/www/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-b9ssr3ne because the default path (/var/www/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+[2022-08-27 15:19:22 +0000] [3197] [DEBUG] POST /callback
+[2022-08-27 15:19:27 +0000] [3197] [DEBUG] Ignoring EPIPE
+[2022-08-27 15:19:46 +0000] [3197] [DEBUG] POST /callback
+[2022-08-27 15:19:52 +0000] [3197] [DEBUG] Ignoring EPIPE
+[2022-08-27 15:20:08 +0000] [3198] [DEBUG] POST /callback
+[2022-08-27 15:20:13 +0000] [3198] [DEBUG] Ignoring EPIPE
+[2022-08-27 15:20:20 +0000] [3198] [DEBUG] POST /callback
+[2022-08-27 15:20:33 +0000] [3197] [DEBUG] POST /callback
+[2022-08-27 15:20:38 +0000] [3197] [DEBUG] Ignoring EPIPE
+[2022-08-27 15:40:43 +0000] [3197] [DEBUG] GET /
+[2022-08-27 15:56:36 +0000] [3196] [DEBUG] POST /callback
+[2022-08-27 15:56:41 +0000] [3196] [DEBUG] Ignoring EPIPE
