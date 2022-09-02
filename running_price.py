@@ -222,6 +222,7 @@ def today_price(msg):
     PATH = "send.png"
     im = pyimgur.Imgur(CLIENT_ID)
     uploaded_image = im.upload_image(PATH, title="GG202201170949")
+    return uploaded_image.link
 
 
 
