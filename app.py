@@ -91,13 +91,13 @@ def handle_message(event):
     elif 'K' in msg[0]:
         img_url = Draw_candle(msg)
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))              
-    elif 'P' in msg[0] or 'p' in msg[0]:
+    elif 'P' in msg[0]:
         img_url = today_price(msg)
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))
     elif 'E' in msg[0]:
         img_url = enddistr(msg)
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))
-    elif 'T'in msg:
+    elif 'T'in msg[0]:
         message =today_price_test(msg) 
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))
     elif 'UpDate'in msg:
