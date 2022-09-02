@@ -9,22 +9,23 @@ import matplotlib.dates as md
 import pickle
 from datetime import timedelta
 from bs4 import BeautifulSoup
-Name = ('TSE', '大盤',  'OTC', '上櫃')
-TSE_i = ('TSE', '大盤')
-OTC_i =('OTC','上櫃')
-up_down=[]
-get_color=[]
-font = FontProperties(fname=".fonts/SimHei.ttf")
+
 
 def today_price(msg):
     msg = msg[1:]
+    Name = ('TSE', '大盤',  'OTC', '上櫃')
+    TSE_i = ('TSE', '大盤')
+    OTC_i =('OTC','上櫃')
+    up_down=[]
+    get_color=[]
+    font = FontProperties(fname=".fonts/SimHei.ttf")
     if msg in Name:        
 #         rul_1 = []
 #         url_2=[]
 #         indexNameE = []
 #         edge_fmin =[]
         #變數設定
-        if msg in   TSE_i:
+        if msg in TSE_i:
             url_1 = "https://tw.quote.finance.yahoo.net/quote/q?type=tick&perd=1m&mkt=10&sym=%23001&callback=jQuery111306542881972874997_1662122335842&_=1662122335843"
             url_2 = 'https://tw.quote.finance.yahoo.net/quote/q?type=tick&perd=1m&mkt=10&sym=%23001&callback=jQuery111301426021457469553_1644243086726&_=1644243086727'
             indexNameE = '上市指數'
