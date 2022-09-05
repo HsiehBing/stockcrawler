@@ -9,6 +9,7 @@ import matplotlib.dates as md
 import pickle
 from datetime import timedelta
 from bs4 import BeautifulSoup
+import numpy as np
 
 
 def today_price(msg):
