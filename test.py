@@ -75,9 +75,9 @@ def today_price_test(msg):
     #爬取今天資料
     res = requests.get(url_2)
     soup = BeautifulSoup(res.text, "html.parser").text
-    sChange_Rate = (soup[soup.find('"185"')+6:soup.find('"443"')-1])
-    Current_Point = (soup[soup.find('"125"')+6:soup.find('"126"')-1])
-    Change_Point = (soup[soup.find('"184"')+6:soup.find('"185"')-1])
+    sChange_Rate =(dt["p"][-1]-dt["p"][-2]) /dt["p"][0]
+    Current_Point = dt["p"][-1]
+    Change_Point = dt["p"][-1]-dt["p"][-2]
     Point_Gap = round(float(Change_Point),2)
     Change_Rate = round(float(sChange_Rate),2)
     if Point_Gap >0:
