@@ -8,6 +8,7 @@ import pickle
 from datetime import timedelta
 from bs4 import BeautifulSoup
 import numpy as np
+
 def today_price_test(msg):            
     font = FontProperties(fname=".fonts/SimHei.ttf")    
     url_1 = "https://tw.quote.finance.yahoo.net/quote/q?type=tick&perd=1m&mkt=10&sym=%23001&callback=jQuery111306542881972874997_1662122335842&_=1662122335843"
