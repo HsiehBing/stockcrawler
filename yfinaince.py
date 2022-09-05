@@ -6,6 +6,7 @@ import pickle
 import requests
 import bs4
 from bs4 import BeautifulSoup
+import pandas as pd
 Name = ('TSE','大盤', 'OTC', '上櫃', '小台1', '小台2')
 TSE_i = ('TSE', '大盤')
 OTC_i =('OTC','上櫃')
@@ -24,10 +25,18 @@ def finainces(msg):
             url = 'https://tw.quote.finance.yahoo.net/quote/q?type=tick&perd=1m&mkt=10&sym=%23001&callback=jQuery111301426021457469553_1644243086726&_=1644243086727'
             indexNameE = '上市指數'
             res = requests.get(url)
-            soup = BeautifulSoup(res.text, "html.parser").text
-            sChange_Rate = (soup[soup.find('"185"')+6:soup.find('"443"')-1])
-            Current_Point = (soup[soup.find('"125"')+6:soup.find('"126"')-1])
-            Change_Point = (soup[soup.find('"184"')+6:soup.find('"185"')-1])
+            # soup = BeautifulSoup(res.text, "html.parser").text
+            # sChange_Rate = (soup[soup.find('"185"')+6:soup.find('"443"')-1])
+            # Current_Point = (soup[soup.find('"125"')+6:soup.find('"126"')-1])
+            # Change_Point = (soup[soup.find('"184"')+6:soup.find('"185"')-1])
+            text_get = res.text
+            #資料整理
+            pos_n = text_get.index("tick", text_get.index("tick")+1)
+            data = text_get[pos_n+7:-4]
+            dt = pd.DataFrame(eval(data))
+            sChange_Rate =(dt["p"][len(dt["p"])-1]-dt["p"][len(dt["p"])-2]) /dt["p"][0]
+            Current_Point = dt["p"][len(dt["p"])-1]
+            Change_Point = round(dt["p"][len(dt["p"])-1]-dt["p"][len(dt["p"])-2],2)
             Point_Gap = round(float(Change_Point),2)
             Change_Rate = round(float(sChange_Rate),2)
             if Point_Gap >0:
