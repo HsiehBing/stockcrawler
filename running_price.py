@@ -113,6 +113,9 @@ def today_price(msg):
         elif Point_Gap <0:
             up_down = '跌' 
             get_color = 'green'
+        else:
+            up_down =''
+            get_color = 'black'
         ##股價跟漲跌幅
         titleA = indexNameE
         titleB = f'{Current_Point}  {up_down}{Point_Gap}({Change_Rate}%)'
@@ -146,6 +149,9 @@ def today_price(msg):
         elif Price_Gap <0:
             up_down = '跌'
             get_color = 'green'
+        else:
+            up_down = ""
+            get_color = 'black'
     #取位數調整
         Today_upper = PreviousClose*1.1
         Today_bottom = PreviousClose*0.9
@@ -210,15 +216,16 @@ def today_price(msg):
         ##標上股價跟漲跌幅
         titleA = stockNameE
         titleB = f'{Current_Price}  {up_down}{Price_Gap}({Change_Rate}%)'
+        ax.grid(bool)
+        ax.set_xlabel('')
+        ax.legend('')
         
     ##標上
     plt.rcParams['axes.unicode_minus'] = False
     plt.figtext(0.1, 0.94, titleA, fontsize=18,fontproperties = font, color='black', ha ='left', )
     plt.figtext(0.1, 0.88, titleB, fontsize=18,fontproperties = font, color=get_color, ha ='left', )
    ########################
-    ax.grid(bool)
-    ax.set_xlabel('')
-    ax.legend('')
+
     #輸出圖
     plt.savefig('send.png')
     CLIENT_ID = "b6bf473fd4d0d4c"
@@ -226,6 +233,3 @@ def today_price(msg):
     im = pyimgur.Imgur(CLIENT_ID)
     uploaded_image = im.upload_image(PATH, title="GG202201170949")
     return uploaded_image.link
-
-
-
