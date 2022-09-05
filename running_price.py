@@ -37,71 +37,73 @@ def today_price(msg):
             edge_fmin = 1
 
         #從網路爬取資料
+        font = FontProperties(fname=".fonts/SimHei.ttf")    
+        url_1 = "https://tw.quote.finance.yahoo.net/quote/q?type=tick&perd=1m&mkt=10&sym=%23001&callback=jQuery111306542881972874997_1662122335842&_=1662122335843"
+        url_2 = 'https://tw.quote.finance.yahoo.net/quote/q?type=tick&perd=1m&mkt=10&sym=%23001&callback=jQuery111301426021457469553_1644243086726&_=1644243086727'
+        indexNameE = '上市指數'
         res = requests.get(url_1)
         text_get = res.text
         #資料整理
         pos_n = text_get.index("tick", text_get.index("tick")+1)
         data = text_get[pos_n+7:-4]
-        data = data.split(",")
-        get_time = []
-        get_price = []
-        get_volumn = []
-        for i in range(len(data)):
-            if i %3 == 0:
-                get_time.append(int(data[i][13:]))
-            elif i%3 == 1:
-                get_price.append(float(data[i][4:]))
-            else :
-                get_volumn.append(data[i][4:-1])
-        df = pd.DataFrame({'timestamp': get_time, 'close': get_price})
-        #走勢圖的上下限
-        Previous_Price = get_price[0]
-        Today_bottom = Previous_Price * 0.97
-        Today_upper =  Previous_Price * 1.03
-        #畫圖
-        df.head()
-        fig1 = plt.figure()
-        ax = fig1.add_axes([0.1, 0.1, 0.75, 0.75])
-        ax =df.plot('timestamp', 'close', ax=ax)
-        ax.set_ylim(Today_bottom, Today_upper)
-        ax.set_xlim(900, 1330)
-        plt.xticks( fontsize = 12)
-        plt.yticks(fontsize = 12)
-        ax.grid(bool)
-        ax.set_xlabel('')
-        ax.legend('')
+        plt.rcParams['figure.facecolor']='white'
+        font = FontProperties(fname=".fonts/SimHei.ttf")
+        edge_fmin = 60
+        dt = pd.DataFrame(eval(data))
+        dt.index = pd.to_datetime(dt['t'].astype(str),format= '%Y%m%d%H%M' )
+        pltx = np.arange(len(dt))
+        fig,axs = plt.subplots(2, 1, gridspec_kw={'width_ratios': [2],'height_ratios': [4, 1]} ,sharex = True)
+
+        axs[0].plot(pltx,dt.p, color = 'blue')
+        axs[0].tick_params('x',length = 0)
+        axs[0].sharex(axs[1])
+        axs[0].spines['bottom'].set_visible(False)
+        axs[0].axhline(y = dt['p'][0], color = 'black')
+        axs[0].set_ylim((dt['p'][0])*0.97, (dt['p'][0])*1.03)
+        axs[0].grid()
+
+        axs[1].bar(pltx,dt.v,facecolor = 'red')
+        axs[1].set_xticks(pltx[::30])
+        axs[1].set_xticklabels(dt.index[::30].strftime('%H:%M'))
+        axs[1].spines['top'].set_visible(False)
+        axs[1].grid()
+        axs[1].set_xlim(pltx[0],pltx[-1])
+        plt.subplots_adjust(hspace = 0.0)
+        #########
         #標註最高點與最低點
-        close_nN = list(filter(None, get_price))
+        close_nN = list(filter(None, dt.p))
         max_element = max(close_nN)
         min_element = min(close_nN)
-        ##最高點
-        max_indx = get_price.index(max_element)
-        x_max_value = df['timestamp'][max_indx]
-        y_max_value = get_price[max_indx]
-        x_maxedge = max(df['timestamp'])-10
-        if x_max_value > x_maxedge:
-            x_max_value = x_max_value-60
-        ##最低點
-        min_index = get_price.index(min_element)
-        x_min_value =  df['timestamp'][min_index]
-        y_min_value = get_price[min_index]
-        x_minedge = max(df['timestamp'])-10
-        if x_min_value > x_minedge:
-            x_min_value = x_min_value-60
-        ##標註
-        ax.annotate(int(max_element), xy = (x_max_value,y_max_value), color = 'red', size=18, fontproperties = font)
-        ax.annotate(int(min_element), xy = (x_min_value,y_min_value-edge_fmin), color = 'blue', size=18, fontproperties = font)
-        #check the postive and negtive
-        plt.rcParams['axes.unicode_minus'] = False
-        ##畫前一天開盤價
-        plt.axhline(y= get_price[0], xmin=0, xmax=1, color='black')
 
+        # x_maxedge = dt.index[20].strftime('%H:%M') -  dt.index[0].strftime('%H:%M')
+        ##最高點
+        max_indx = close_nN.index(max_element)
+        x_max_value = dt.index[max_indx].strftime('%H:%M')
+        y_max_value = dt.p[max_indx]
+        # x_maxedge = max(dt['t'])-10
+        # if x_max_value > x_maxedge:
+        #     x_max_value = x_max_value-60
+
+        ##最低點
+        min_index = close_nN.index(min_element)
+        x_min_value =  dt.index[min_index].strftime('%H:%M')
+        y_min_value =  dt.p[min_index]
+        if min_index > 250:
+            min_index = min_index-30
+
+        ##標註
+        axs[0].annotate(int(max_element), xy = (pltx[max_indx], y_max_value), color = 'red', size=18, fontproperties = font)
+        axs[0].annotate(int(min_element), xy = (pltx[min_index],y_min_value-edge_fmin), color = 'blue', size=18, fontproperties = font)
+        #check the postive and negtive
+        # plt.rcParams['axes.unicode_minus'] = False
+        ##畫前一天開盤價
+
+
+        #########
         #爬取今天資料
         sChange_Rate =(dt["p"][-1]-dt["p"][-2]) /dt["p"][0]
         Current_Point = dt["p"][-1]
         Change_Point = dt["p"][-1]-dt["p"][-2]
-        Point_Gap = round(float(Change_Point),2)
-        Change_Rate = round(float(sChange_Rate),2)
         Point_Gap = round(float(Change_Point),2)
         Change_Rate = round(float(sChange_Rate),2)
         if Point_Gap >0:
