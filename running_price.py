@@ -68,7 +68,8 @@ def today_price(msg):
         axs[1].set_xticklabels(dt.index[::30].strftime('%H:%M'))
         axs[1].spines['top'].set_visible(False)
         axs[1].grid()
-        axs[1].set_xlim(pltx[0],pltx[-1])
+
+        axs[1].set_xlim(0 , 270)
         plt.subplots_adjust(hspace = 0.0)
         #########
         #標註最高點與最低點
