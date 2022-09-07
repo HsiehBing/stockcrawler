@@ -39,9 +39,6 @@ def today_price(msg):
 
         #從網路爬取資料
         font = FontProperties(fname=".fonts/SimHei.ttf")    
-        url_1 = "https://tw.quote.finance.yahoo.net/quote/q?type=tick&perd=1m&mkt=10&sym=%23001&callback=jQuery111306542881972874997_1662122335842&_=1662122335843"
-        url_2 = 'https://tw.quote.finance.yahoo.net/quote/q?type=tick&perd=1m&mkt=10&sym=%23001&callback=jQuery111301426021457469553_1644243086726&_=1644243086727'
-        indexNameE = '上市指數'
         res = requests.get(url_1)
         text_get = res.text
         #資料整理
