@@ -103,11 +103,11 @@ def today_price(msg):
 
         #########
         #爬取今天資料
-        sChange_Rate =(dt["p"][-1]-dt["p"][-2]) /dt["p"][0]
+        sChange_Rate =(dt["p"][-1]-dt["p"][0]) /dt["p"][0]
         Current_Point = dt["p"][-1]
-        Change_Point = dt["p"][-1]-dt["p"][-2]
+        Change_Point = dt["p"][-1]-dt["p"][0]
         Point_Gap = round(float(Change_Point),2)
-        Change_Rate = round(float(sChange_Rate),2)
+        Change_Rate = round(float(sChange_Rate*100),2)
         if Point_Gap >0:
             up_down = '漲'
             get_color = 'red'
