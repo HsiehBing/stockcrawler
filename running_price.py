@@ -46,7 +46,6 @@ def today_price(msg):
         data = text_get[pos_n+7:-4]
         plt.rcParams['figure.facecolor']='white'
         font = FontProperties(fname=".fonts/SimHei.ttf")
-        edge_fmin = 60
         dt = pd.DataFrame(eval(data))
         dt.index = pd.to_datetime(dt['t'].astype(str),format= '%Y%m%d%H%M' )
         pltx = np.arange(len(dt))
@@ -93,6 +92,7 @@ def today_price(msg):
         ##標註
         axs[0].annotate(int(max_element), xy = (pltx[max_indx], y_max_value), color = 'red', size=18, fontproperties = font)
         axs[0].annotate(int(min_element), xy = (pltx[min_index],y_min_value-edge_fmin), color = 'blue', size=18, fontproperties = font)
+        
         #check the postive and negtive
         # plt.rcParams['axes.unicode_minus'] = False
         ##畫前一天開盤價
