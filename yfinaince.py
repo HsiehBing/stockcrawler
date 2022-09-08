@@ -34,9 +34,9 @@ def finainces(msg):
             pos_n = text_get.index("tick", text_get.index("tick")+1)
             data = text_get[pos_n+7:-4]
             dt = pd.DataFrame(eval(data))
-            sChange_Rate =(dt["p"][len(dt["p"])-1]-dt["p"][len(dt["p"])-2]) /dt["p"][0]
+            sChange_Rate =(dt["p"][len(dt["p"])-1]-dt["p"][0]) /dt["p"][0]
             Current_Point = dt["p"][len(dt["p"])-1]
-            Change_Point = round(dt["p"][len(dt["p"])-1]-dt["p"][len(dt["p"])-2],2)
+            Change_Point = round(dt["p"][len(dt["p"])-1]-dt["p"][0],2)
             Point_Gap = round(float(Change_Point),2)
             Change_Rate = round(float(sChange_Rate),2)
             if Point_Gap >0:
