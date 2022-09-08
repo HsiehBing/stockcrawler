@@ -38,7 +38,7 @@ def finainces(msg):
             Current_Point = dt["p"][len(dt["p"])-1]
             Change_Point = round(dt["p"][len(dt["p"])-1]-dt["p"][0],2)
             Point_Gap = round(float(Change_Point),2)
-            Change_Rate = round(float(sChange_Rate),2)
+            Change_Rate = round(float(sChange_Rate*100),2)
             if Point_Gap >0:
                 up_down = '漲'
             elif Point_Gap <0:
