@@ -10,6 +10,6 @@ from bs4 import BeautifulSoup
 import numpy as np
 
 def test0916(msg):            
-    return "自動訊息測試"
+    return "Message test"
 
 
