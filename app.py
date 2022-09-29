@@ -21,6 +21,7 @@ from test import *
 from candle import *
 from currency import *
 from update import *
+from GetUserId import *
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
@@ -98,7 +99,7 @@ def handle_message(event):
         img_url = enddistr(msg)
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))
     elif 'T'in msg[0]:
-        message =TextSendMessage(test0916(msg)) 
+        message =TextSendMessage(GETUserId(msg)) 
         line_bot_api.reply_message(event.reply_token, message)
     elif 'UpDate'in msg:
         message =TextSendMessage(renew_data()) 
