@@ -1,6 +1,3 @@
 from linebot import LineBotApi
+from linebot.exceptions import LineBotApiError
 
-def GETUserId(event):
-    UserId = event.source.user_id
-    profile = line_bot_api.get_profile(UserId)
-    return profile
