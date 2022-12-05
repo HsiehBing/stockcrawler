@@ -7,7 +7,8 @@ import pyimgur
 # 'Microsoft JhengHei' # "SimHei"
 
 def Currency(msg):
-    font = FontProperties(fname="/usr/share/fonts/truetype/arphic/ukai.ttc")
+#    font = FontProperties(fname="./SimHei.ttf")
+#    font = "SimHei"
     currency_name = msg[1:]
     dfs = pandas.read_html(f'https://rate.bot.com.tw/xrt/quote/ltm/{currency_name}')
     rate = dfs[0]
@@ -16,7 +17,8 @@ def Currency(msg):
     rate['掛牌日期'] = pandas.to_datetime(rate['掛牌日期'], format = '%Y/%m/%d')
 
     fig =plt.figure(figsize = (10,5))
-    plt.rcParams['font.family'] = font.get_name() #AR PL UKai CN
+#    plt.rcParams['font.family'] = font #AR PL UKai CN
+    plt.rcParams['font.family'] = ['SimHei'] #AR PL UKai CN
     plt.rcParams['axes.unicode_minus'] = False  
 
     plt.plot(rate['掛牌日期'], rate['即期-買入'], label=f'即期-買入{rate.iloc[0][4]}', color = 'red')

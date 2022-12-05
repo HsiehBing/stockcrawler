@@ -39,7 +39,8 @@ def Draw_candle(msg):
                                 volume='inherit')
     #font  'Microsoft JhengHei'  
     #font  'SimHei'
-        s = mpf.make_mpf_style(base_mpf_style='yahoo', marketcolors=mc, rc = {'font.family': 'AR PL UKai CN'})
+    #font  'AR PL UKai CN'
+        s = mpf.make_mpf_style(base_mpf_style='yahoo', marketcolors=mc, rc = {'font.family': 'SimHei'})
         mpf.plot(stock, type='candle', style=s, ylabel='', title = stockNameE, mav = (5,10, 20,60), volume=True,savefig = 'send.png')
 
 
@@ -70,7 +71,7 @@ def Draw_candle(msg):
                                 volume='inherit')
     #font  'Microsoft JhengHei'  
     #font  'SimHei'
-        s = mpf.make_mpf_style(base_mpf_style='yahoo', marketcolors=mc, rc = {'font.family':'AR PL UKai TW MBE'})
+        s = mpf.make_mpf_style(base_mpf_style='yahoo', marketcolors=mc, rc = {'font.family':'SimHei'})
         mpf.plot(stock, type='candle', style=s, ylabel='', title = StockName, mav = (5,10, 20,60), volume=True,savefig = 'send.png')
 
 
