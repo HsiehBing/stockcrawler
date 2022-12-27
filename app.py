@@ -99,7 +99,7 @@ def handle_message(event):
         img_url = enddistr(msg)
         line_bot_api.reply_message(event.reply_token,ImageSendMessage(original_content_url=img_url, preview_image_url=img_url))
     elif 'T'in msg[0]:
-        message =TextSendMessage(GETUserId(event)) 
+        message =TextSendMessage(test(msg)) 
         line_bot_api.reply_message(event.reply_token, message)
     elif 'UpDate'in msg:
         message =TextSendMessage(renew_data()) 

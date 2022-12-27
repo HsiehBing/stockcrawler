@@ -8,8 +8,10 @@ import pickle
 from datetime import timedelta
 from bs4 import BeautifulSoup
 import numpy as np
-print("123")
-def test0916(msg):            
-    return "system test"
+import sys
+
+def test(msg):
+
+    return sys.version
 
 
