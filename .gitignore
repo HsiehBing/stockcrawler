@@ -2,3 +2,4 @@ access.log
 error.log
 app.sock
 send.png
+__pyache__/

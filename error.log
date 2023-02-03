@@ -3308,3 +3308,12 @@ Matplotlib created a temporary config/cache directory at /tmp/matplotlib-b9ssr3n
 [2022-08-27 15:40:43 +0000] [3197] [DEBUG] GET /
 [2022-08-27 15:56:36 +0000] [3196] [DEBUG] POST /callback
 [2022-08-27 15:56:41 +0000] [3196] [DEBUG] Ignoring EPIPE
+[2022-12-09 03:12:28 +0800] [3633] [INFO] Starting gunicorn 20.1.0
+[2022-12-09 03:12:28 +0800] [3633] [INFO] Listening at: http://192.168.50.58:8080 (3633)
+[2022-12-09 03:12:28 +0800] [3633] [INFO] Using worker: sync
+[2022-12-09 03:12:28 +0800] [3644] [INFO] Booting worker with pid: 3644
+[2022-12-09 03:16:43 +0800] [3633] [INFO] Handling signal: term
+[2022-12-09 03:16:43 +0800] [3644] [INFO] Worker exiting (pid: 3644)
+123
+[2022-12-09 03:16:43 +0800] [3633] [WARNING] Worker with pid 3644 was terminated due to signal 15
+[2022-12-09 03:16:43 +0800] [3633] [INFO] Shutting down: Master

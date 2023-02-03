@@ -6,11 +6,11 @@ import pandas as pd
 import array
 import numpy as np
 
-def plottable(figsize,data,collabels,date_title,tbfs = 12,fp = 'AR PL UKai CN'):
+def plottable(figsize,data,collabels,date_title,tbfs = 12,fp = 'WenQuanYi Micro Hei'):
     #Microsoft JhengHei
     fig, ax = plt.subplots()
     fig.set_size_inches(figsize[0], figsize[1])
-    plt.rcParams['font.family'] = fp  ## set font
+    plt.rcParams['font.family'] = "WenQuanYi Micro Hei"  ## set font
     
     #### Plot table
     tb = ax.table(cellText=data.values,
@@ -72,7 +72,7 @@ def enddistr(msg):
               collabels = column_labels,
               date_title = data_title,
               tbfs = 12,
-              fp = 'AR PL UKai CN' ##  Microsoft JhengHei
+              fp = 'WenQuanYi Micro Hei' ##  Microsoft JhengHei
     )
 
     return uploaded_image.link

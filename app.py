@@ -41,13 +41,14 @@ import mplfinance
 app = Flask(__name__)
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 # Channel Access Token
-line_bot_api = LineBotApi('T5Zqw8jYWPqLTdpT46lz06Wbqm3RpDw3mrylWdKdV5YRUXqXw/I4BW1Mmp/M0VgK3kA5r4v/V9r4cH2/gH2PIM46uLoHraHb2DxW8EB8lrPT2GzH1YLgETJ8MDuomMwbeDhk/2T4CUM9RxXC3K1E3AdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('cukNyMYO8MxG26X6iggtkHUYqJpuX08iddLlraFc4gXaeTuHnTsV0N66T0mcuS4RrvjEVbiSz70PwFojwKZaPM6cN+FGJWuqWl/B/rR6mWpkxxlFbE6kXgkTP3bF39azppEqP3HTHiTnDi6ukJHxGwdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
-handler = WebhookHandler('fb51bfd54e6dca9668655d34b92ebb71')
+handler = WebhookHandler('8dc54284967b53fcb794e3ac9719d81d')
+
 
 
 #監聽所有來自 /callback 的 Post Request
-#########
+#######
 @app.route("/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value

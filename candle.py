@@ -4,8 +4,10 @@ import yfinance as yf
 import datetime
 import pickle
 import pyimgur
+from matplotlib.font_manager import FontProperties
 
-def Draw_candle(msg):
+def Draw_candle(msg):    
+    font = FontProperties(fname=".fonts/SimHei.ttf")
     if msg[2].encode('UTF-8').isalpha()==False :
         a_file = open("Input.pkl", 'rb')
         Input = pickle.load(a_file)
@@ -39,7 +41,8 @@ def Draw_candle(msg):
                                 volume='inherit')
     #font  'Microsoft JhengHei'  
     #font  'SimHei'
-        s = mpf.make_mpf_style(base_mpf_style='yahoo', marketcolors=mc, rc = {'font.family': 'AR PL UKai CN'})
+#        s = mpf.make_mpf_style(base_mpf_style='yahoo', marketcolors=mc, rc = {'font.family': 'AR PL UKai CN'})
+        s = mpf.make_mpf_style(base_mpf_style='yahoo', marketcolors=mc, rc = {'font.family': font})
         mpf.plot(stock, type='candle', style=s, ylabel='', title = stockNameE, mav = (5,10, 20,60), volume=True,savefig = 'send.png')
 
 
@@ -70,7 +73,8 @@ def Draw_candle(msg):
                                 volume='inherit')
     #font  'Microsoft JhengHei'  
     #font  'SimHei'
-        s = mpf.make_mpf_style(base_mpf_style='yahoo', marketcolors=mc, rc = {'font.family':'AR PL UKai TW MBE'})
+#        s = mpf.make_mpf_style(base_mpf_style='yahoo', marketcolors=mc, rc = {'font.family':'AR PL UKai TW MBE'})
+        s = mpf.make_mpf_style(base_mpf_style='yahoo', marketcolors=mc, rc = {'font.family':font})
         mpf.plot(stock, type='candle', style=s, ylabel='', title = StockName, mav = (5,10, 20,60), volume=True,savefig = 'send.png')
 
 
